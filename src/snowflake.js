@@ -26,7 +26,6 @@ import {
  * Necessary components from Router-Flux
  */
 import RNRF, {
-  Router,
   Route,
   Scene,
   TabBar} from 'react-native-router-flux';
@@ -144,7 +143,7 @@ export default function native(platform) {
       const store = configureStore(getInitialState());
 
       //Connect w/ the Router
-      let r=Router;
+      let r=RNRF.Router;
       const Router = connect()(r);
 
       // configureStore will combine reducers from snowflake and main application
