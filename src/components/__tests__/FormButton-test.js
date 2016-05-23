@@ -1,6 +1,6 @@
 /**
  * # FormButton-test.js
- * 
+ *
  * This class tests that the form button displays correctly
  *
  * *Note:* if you want to understand the structures here, add a
@@ -14,7 +14,7 @@ jest.autoMockOff();
 * ## Imports
  */
 
-const React = require('react-native');
+const React = require('react');
 const { View } = React;
 
 const utils = require('react-addons-test-utils');
@@ -34,14 +34,14 @@ describe('FormButton', () => {
 
   /**
    * ### defaults
-   */ 
+   */
   const buttonProps = {
     self: this,
     isDisabled: false,
     onPress: () => {},
     buttonText: 'TestString'
   };
-  
+
   /**
    * ### renderFormButton
    * render the component under test and return
@@ -59,7 +59,7 @@ describe('FormButton', () => {
     };
   }
   /**
-   * ### beforeEach 
+   * ### beforeEach
    * before each test, render the form button with the default props
    */
   beforeEach(() => {
@@ -68,7 +68,7 @@ describe('FormButton', () => {
   /**
    * ### it should be fine
    * the containing object should be a view
-   */    
+   */
   it('should be fine', () => {
     const {output} = formButton;
     expect(output.type).toEqual(View);

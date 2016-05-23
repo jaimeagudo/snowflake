@@ -1,15 +1,15 @@
 /**
  * # app.js
- *  Display startup screen and 
- *  getSessionTokenAtStartup which will navigate upon completion 
+ *  Display startup screen and
+ *  getSessionTokenAtStartup which will navigate upon completion
  *
- *   
- *  
+ *
+ *
  */
 'use strict';
 /*
  * ## Imports
- *  
+ *
  * Imports from redux
  */
 import { bindActionCreators } from 'redux';
@@ -30,8 +30,9 @@ import * as globalActions from '../reducers/global/globalActions';
 /**
  * The components we need from ReactNative
  */
-import React,
-{ 	
+import React from 'react';
+import
+{
   StyleSheet,
   View,
   Text
@@ -95,12 +96,12 @@ var styles = StyleSheet.create({
 let App = React.createClass({
   /**
    * See if there's a sessionToken from a previous login
-   * 
+   *
    */
   componentDidMount() {
     this.props.actions.getSessionToken();
   },
-  
+
   render() {
     return(
       <View style={ styles.container }>
@@ -114,4 +115,3 @@ let App = React.createClass({
  * Connect the properties
  */
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-

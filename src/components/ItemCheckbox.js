@@ -3,8 +3,8 @@
  *
  * This class was initially written by
  * https://github.com/mhollweck/react-native-item-checkbox
- * 
- * I've opened an issue to attempt to merge this back in 
+ *
+ * I've opened an issue to attempt to merge this back in
  */
 'use strict';
 
@@ -13,7 +13,7 @@
  *
  * React
  */
-var React = require('react-native');
+var React = require('react');
 
  /**
   * The vector icon

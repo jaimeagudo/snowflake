@@ -13,7 +13,8 @@
  *
  * Necessary components from ReactNative
  */
-import React, {
+import React from 'react';
+import {
   AppRegistry,
   Navigator,
   View,
@@ -25,6 +26,7 @@ import React, {
  * Necessary components from Router-Flux
  */
 import RNRF, {
+  Router,
   Route,
   Scene,
   TabBar} from 'react-native-router-flux';
@@ -62,11 +64,11 @@ import Profile from './containers/Profile';
 import Main from './containers/Main';
 import Subview from './containers/Subview';
 
-/** 
+/**
  * ### icons
  *
  * Add icon support for use in Tabbar
- * 
+ *
  */
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -108,8 +110,8 @@ function getInitialState() {
   return _initState;
 }
 /**
-* ## TabIcon 
-* 
+* ## TabIcon
+*
 * Displays the icon for the tab w/ color dependent upon selection
 */
 
@@ -138,18 +140,19 @@ export default function native(platform) {
 
   let Snowflake = React.createClass( {
     render() {
-      
+
       const store = configureStore(getInitialState());
 
       //Connect w/ the Router
-      const Router = connect()(RNRF.Router);
-      
+      let r=Router;
+      const Router = connect()(r);
+
       // configureStore will combine reducers from snowflake and main application
       // it will then create the store based on aggregate state from all reducers
       store.dispatch(setPlatform(platform));
       store.dispatch(setVersion(VERSION));
       store.dispatch(setStore(store));
-      
+
       // setup the router table with App selected as the initial component
       return (
         <Provider store={store}>
@@ -159,24 +162,24 @@ export default function native(platform) {
                      component={App}
                      title="App"
                      initial={true}/>
-              
+
 	      <Scene key="InitialLoginForm"
                      component={Register}
                      title="Register" />
-                     
+
         <Scene key="Login"
                      component={Login}
                      title="Login"/>
-	      
+
 	      <Scene key="Register"
                      component={Register}
                      title="Register"/>
-	      
+
 	      <Scene key="ForgotPassword"
                      component={ForgotPassword}
                      title="ForgotPassword"
                      type="replace" />
-	      
+
 	      <Scene key="Subview"
                      component={Subview}
                      title="Subview"/>
@@ -188,18 +191,18 @@ export default function native(platform) {
                        iconName={"sign-out"}
                        hideNavBar={true}
                        component={Logout}/>
-                
+
 	        <Scene key="Main"
                        title="main"
                        iconName={"home"}
-                       icon={TabIcon}                       
+                       icon={TabIcon}
                        hideNavBar={true}
                        component={Main}
                        initial={true}/>
 
                 <Scene key="Profile"
                        title="profile"
-                       icon={TabIcon}                       
+                       icon={TabIcon}
                        iconName={"gear"}
                        hideNavBar={true}
                        component={Profile}/>

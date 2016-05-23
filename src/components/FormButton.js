@@ -9,13 +9,14 @@
  *
  * React
  */
-const  React = require('react-native');
+const  React = require('react');
+const ReactNative = require('react-native');
 const
 {
   StyleSheet,
   View
-} = React;
-  
+} = ReactNative;
+
 /**
  * The platform neutral button
  */
@@ -40,7 +41,7 @@ var FormButton = React.createClass({
   /**
    * ### render
    *
-   * Display the Button 
+   * Display the Button
    */
   render() {
     return (
