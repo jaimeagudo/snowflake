@@ -1,8 +1,7 @@
 # OSX
 #
 .DS_Store
-.tern-port
-        
+
 # Xcode
 #
 build/
@@ -31,9 +30,11 @@ local.properties
 
 # node.js
 #
-npm-debug.log
 node_modules/
-# jest
-coverage/
+npm-debug.log
 
-src/lib/config.js
+# BUCK
+buck-out/
+\.buckd/
+android/app/libs
+android/keystores/debug.keystore
